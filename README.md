@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+File Upload Application with Progress Bar
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based file upload application that allows users to upload up to 10 files. The application includes a progress bar that updates as files are uploaded, with each file contributing 10% to the progress. The progress bar changes color based on completion, and users can delete individual files if needed. The application also handles duplicate file detection and provides error handling through a modal dialog.
 
-## Available Scripts
+Features
 
-In the project directory, you can run:
+1. File Upload Limit
+Users can upload up to 10 files.
+The application prevents uploading more than 10 files at a time. If a user attempts to upload more than 10 files, a modal dialog is displayed with an error message.
+2. Progress Bar
+The progress bar updates in 10% increments as files are uploaded.
+The color of the progress bar changes dynamically:
+Red: Progress is 30% or less.
+Orange: Progress is between 31% and 70%.
+Green: Progress is above 70%.
+When all 10 files are uploaded, the progress bar reaches 100%, and a success message is displayed.
+3. Duplicate File Detection
+The application checks for duplicate file names during upload.
+If a duplicate file is detected, an error message is shown, and the file is not added to the list.
+4. Delete Option
+Each uploaded file has a delete button beside it, allowing users to remove the file from the list.
+Deleting a file decreases the progress accordingly and allows space for new uploads.
+5. Error Handling with Modal Dialog
+If a user tries to upload more than 10 files at once, a modal dialog appears, informing them to select only up to 10 files.
+Technologies Used
 
-### `npm start`
+React.js: The core framework used to build the application.
+CSS: For styling the components, including the progress bar and modal dialog.
+React Modal: A library used to create the modal dialog for error handling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Usage
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Upload Files: Click the "Choose Files" button to select up to 10 files from your local system.
+View Progress: The progress bar will update as files are uploaded. The color of the progress bar will change based on the percentage completed.
+Delete Files: To remove a file, click the "Delete" button beside the file name. This will also update the progress bar.
+Error Handling: If you attempt to upload more than 10 files or a duplicate file, an error will be displayed.
